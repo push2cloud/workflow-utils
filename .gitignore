@@ -37,6 +37,7 @@ private_node_modules/**/*
 .npm
 tmp
 .pm2
+npm-debug.log
 
 __workspace
 __manifests
