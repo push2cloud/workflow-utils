@@ -1,0 +1,31 @@
+{
+  "name": "push2cloud-workflow-utils",
+  "version": "1.0.0",
+  "description": "general workflow utilities",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint"
+  },
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "author": "Adriano Raiano <adriano@raiano.ch> (https://github.com/adrai)",
+  "contributors": [
+    "Adriano Raiano <adriano@raiano.ch> (https://github.com/adrai)",
+    "Christoph Hermann <schtoeffel@gmail.com> (http://stoeffel.github.io/)",
+    "Michael Erne <michael.erne@gmail.com> (https://github.com/michaelerne)"
+  ],
+  "license": "Apache-2.0",
+  "repository": "push2cloud/workflow-utils",
+  "homepage": "http://push2.cloud/",
+  "devDependencies": {
+    "eslint": "2.8.0"
+  },
+  "dependencies": {
+    "async": "2.0.0-rc.3",
+    "debug": "2.2.0",
+    "dotty": "0.0.2",
+    "lodash": "4.0.0"
+  }
+}
