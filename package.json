@@ -1,6 +1,6 @@
 {
   "name": "push2cloud-workflow-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "general workflow utilities",
   "main": "index.js",
   "scripts": {
