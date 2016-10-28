@@ -6,8 +6,9 @@ module.exports = (a, b, by) => {
     const clone = _.cloneDeep(ctx);
     const ctxA = _.isString(a) ? dotty.get(clone, a) : a(clone);
     const ctxB = _.isString(b) ? dotty.get(clone, b) : b(clone);
+
     return _.reduce(ctxA, (acc, x) => {
-      var match = _.find(ctxB, (y) => by(x) == by(y))
+      var match = _.find(ctxB, by(x))
       if (match) {
         acc.push([x, match])
       }
