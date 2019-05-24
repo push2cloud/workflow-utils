@@ -5,6 +5,7 @@ module.exports = (
   stepFn
 , fromCtx
 , toCtx
+, shouldAbortWorkflowOnError = false
 ) => {
   return (ctx, cb) => {
     cb = cb || _.noop;
@@ -22,11 +23,17 @@ module.exports = (
     return new Promise((resolve, reject) => {
       try {
         stepFn(_.cloneDeep(fromFn(ctx)), (err, res) => {
+          if (err && shouldAbortWorkflowOnError) {
+            return reject(err);
+          }
           cb(err, toFn(ctx, res));
           if (err) return reject(err);
           resolve(toFn(ctx, res));
         });
       } catch (e) {
+        if (e && shouldAbortWorkflowOnError) {
+          return reject(e);
+        }
         cb(e);
         reject(e);
       }
