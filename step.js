@@ -24,6 +24,7 @@ module.exports = (
       try {
         stepFn(_.cloneDeep(fromFn(ctx)), (err, res) => {
           if (err && shouldAbortWorkflowOnError) {
+            console.log(`Step failed due to ${err}`);
             return reject(err);
           }
           cb(err, toFn(ctx, res));
@@ -32,6 +33,7 @@ module.exports = (
         });
       } catch (e) {
         if (e && shouldAbortWorkflowOnError) {
+          console.log(`Step failed due to ${e}`);
           return reject(e);
         }
         cb(e);
